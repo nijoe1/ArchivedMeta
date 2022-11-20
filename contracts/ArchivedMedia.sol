@@ -82,9 +82,9 @@ contract ArchivedMedia is ERC721URIStorage,Ownable {
         uint256 file_type,
         string memory groupid
     ) public payable  {
-        // require(bytes(file).length != 0 && bytes(data).length != 0, "Invalid URI");
-        // require(price > 0, "Price must be greater than 0");
-        // require(file_type >= 0 && file_type <= 4, "Invalid file type");
+        require(bytes(file).length != 0 && bytes(data).length != 0, "Invalid URI");
+        require(price > 0, "Price must be greater than 0");
+        require(file_type >= 0 && file_type <= 4, "Invalid file type");
 
         // // Persisting the Post one more time by anyone that mints it. Using the marketAPI
 
@@ -92,10 +92,10 @@ contract ArchivedMedia is ERC721URIStorage,Ownable {
         MarketTypes.MockDeal memory deal = marketAPI_contract.createDeal(dealID.current(),msg.sender);
         // // Getting the collateral to execute that Deal
 
-        // uint256 Dealcollateral = getDealPrice();
+        uint256 Dealcollateral = getDealPrice();
 
 
-        // marketAPI_contract.add_balance{value:Dealcollateral}(MarketTypes.AddBalanceParams(msg.sender)); 
+        marketAPI_contract.add_balance{value:Dealcollateral}(MarketTypes.AddBalanceParams(msg.sender)); 
 
         marketAPI_contract.publish_storage_deal(deal, msg.sender);
 
