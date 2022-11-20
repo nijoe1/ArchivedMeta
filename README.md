@@ -1,3 +1,7 @@
+glif_explorer_smart_contract = https://explorer-calibration.glif.link/address/f410fznwq5sfdavmmruxjialhycxbj6pktip6x6zx2li/?network=wallaby
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
